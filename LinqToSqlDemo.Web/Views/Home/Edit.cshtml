@@ -1,0 +1,19 @@
+﻿@model LinqToSqlDemo.Web.Models.EditViewModel
+
+
+<div style="margin-top: 40px;">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 well">
+            <form method="post" action="/home/update">
+                <input type="text" value="@Model.Person.FirstName" class="form-control" placeholder="First Name" name="firstName" />
+                <br />
+                <input type="text" value="@Model.Person.LastName" class="form-control" placeholder="Last Name" name="lastName" />
+                <br />
+                <input type="text" value="@Model.Person.Age" class="form-control" placeholder="Age" name="age" />
+                <br />
+                <input type="hidden" name="id" value="@Model.Person.Id"/>
+                <button class="btn btn-warning">Update</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@using LinqToSqlDemo.Data
+@model LinqToSqlDemo.Web.Models.IndexPageViewModel
+
+<a href="/home/new" class="btn btn-primary">Add</a>  
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (Person person in Model.People)
+    {
+        <tr>
+            <td>@person.FirstName</td>
+            <td>@person.LastName</td>
+            <td>@person.Age</td>
+            <td>
+                <a href="/home/edit?personid=@person.Id" class="btn btn-warning">Edit</a>
+                <button class="btn btn-danger" data-person-id="@person.Id">Delete</button>
+            </td>
+        </tr>
+    }
+</table>
+
+@section scripts
+{
+    <script src="~/Scripts/index.js"></script>
+}
